@@ -1,0 +1,214 @@
+@import "lib/mixins.less";
+//@import "lib/variables.less";
+//@import "pygments/mustang.less";
+
+//@import "consts.less";
+
+//@import "include/code.less";
+//@import "include/article.less";
+//@import "include/paginator.less";
+
+/* Body and structure
+-------------------------------------------------- */
+html, body {
+  color: #57676e;
+  background: #e7eef2;
+  -webkit-font-smoothing: antialiased;
+  height: 100%;
+  line-height: 1.5em;
+}
+/* must declare 0 margins on everything, also for main layout components use padding, not 
+vertical margins (top and bottom) to add spacing, else those margins get added to total height 
+and your footer gets pushed down a bit more, creating vertical scroll bars in the browser */
+body {
+  & > footer {
+    position: relative;
+    margin-top: -60px; /* negative value of footer height */
+    height: 60px;
+    overflow: hidden;
+    line-height: 60px;
+    background: #e0e7eb;
+    border-top: 1px solid #c3ccd0;
+    clear:both;
+  } 
+}
+
+#wrapper {
+  min-height: 100%;
+  min-width: 960px;
+
+  & > header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    padding: 0 20px;
+    height: 60px;
+    background: #e0e7eb;
+    border-bottom: 1px solid #c3ccd0;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0),0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: visible;
+  }
+}
+
+#main {
+  padding-top: 70px;
+  overflow: auto;
+  min-height: 400px;
+  padding-bottom: 60px;
+}
+
+#logo {
+  width: 80px;
+  height: 80px;
+  background: url('//prose.io/images/sprite.png') 22px -154px no-repeat;
+  .border-radius(2px);
+  display: block;
+  padding: 0 20px 0 20px;
+  margin: 0px;
+  float: left;
+  color: #434C50;
+}
+
+.navbar {
+  
+  margin-top: 8px;
+
+  a {
+    font-weight: bold;
+    text-indent: 0;
+    padding: 0 10px;
+    display: block;
+    color: #434C50;
+    text-decoration: none;
+    -moz-transition: background-color 100ms linear, color 100ms linear;
+    -o-transition: background-color 100ms linear, color 100ms linear;
+    -webkit-transition: background-color 100ms linear, color 100ms linear;
+    transition: background-color 100ms linear, color 100ms linear;
+  }
+
+  a.current {
+//    border-bottom: 2px solid #60ABC1;
+    /*
+    deep red: #CA664F
+    brown:    #857271
+    green:    #B4Ec64
+    blue:     #60ABC1 
+    */
+  }
+
+  //a:hover { background: #3d4548; }
+}
+
+.page {
+  width: 900px;
+  margin: 30px auto;
+  background: white;
+  padding: 30px;
+  border: 1px solid #C3CCD0;
+  font-size: 15px;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0),0 0 10px rgba(0, 0, 0, 0.1);
+
+  & > h1 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    border-bottom: 1px solid #D5E0E4;
+    padding-bottom: 20px;
+  }
+}
+
+#products {
+  margin: 0px auto;
+}
+
+.product {
+  overflow: hidden;
+  background-color: #F2F6F8;
+  border: #c3ccd0 1px solid;
+  .border-radius(4px);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0),0 0 10px rgba(0, 0, 0, 0.1);
+
+  font-size: 16px;
+  position: relative;
+  margin: 20px 20px 0px 0;
+  width: 260px;
+  height: 250px;
+  color: #444;
+  display: block;
+  float: left;
+  border: 1px solid #C3CCD0;
+
+  & > header {
+    color: #777;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    text-shadow: 0 1px 0 white;
+    padding: 10px;
+    border-bottom: 1px solid #D5E0E4;
+  } 
+
+  & > .preview {
+    text-align: center;
+  }
+
+  & > footer {
+    padding: 10px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    background: #000;
+    .opacity(60);
+    display: none;
+    position: absolute;
+    top: 0; left: 0;
+    height: 100%; 
+    width: 100%;
+
+    a { color: #fff; }
+  }
+}
+
+body > footer {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+
+/* Tweak navbar brand link to be super sleek
+-------------------------------------------------- */
+
+
+/* Responsive Docs
+-------------------------------------------------- */
+@media (max-width: 480px) {
+  // Reduce padding above jumbotron
+  body {
+  }
+}
+
+@media (max-width: 768px) {
+  // Remove any padding from the body
+  body {
+    padding-top: 0;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 980px) {
+  //Remove any padding from the body
+  body {
+    padding-top: 0;
+  }
+}
+
+
+@media (max-width: 960px) {
+  // Unfloat brand
+  .navbar-fixed-top .brand {
+    float: left;
+    margin-left: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}

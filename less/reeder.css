@@ -1,0 +1,339 @@
+/* from reederapp.com */
+html,body {
+  height: 100%;
+}
+body {
+  font: 16px bold Helvetica,sans-serif;
+  margin: 0;
+  background: url(http://reederapp.com/ipad/images/background-dark.png);
+  overflow: hidden;
+}
+
+#main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40%;
+  height: 100%;
+  background: url(http://reederapp.com/ipad/images/background.png);
+  border-right: 1px solid #fff;
+  overflow: visible;
+  -webkit-box-shadow: rgba(0,0,0,0.5) 0px 0px 2px;
+  -moz-box-shadow: rgba(0,0,0,0.5) 0px 0px 1px;
+  -o-box-shadow: rgba(0,0,0,0.5) 0px 0px 1px;
+}
+
+
+img {
+  outline: 0;
+  border: 0;
+}
+
+.reeder {
+  position: absolute;
+  top: 100px;
+  right: -220px;
+}
+
+ul {
+  display: block;
+  position: absolute;
+  margin: 0;
+  top: 200px;
+  right: -122px;
+  width: 100px;
+}
+
+ul li {
+  display: block;
+  text-align: left;
+  list-style: none;
+}
+
+
+ul li a {
+  color: #bbb;
+  text-decoration: none;
+  padding: 25px 0;
+  line-height: 50px;
+  text-shadow: rgba(0,0,0,0) 0px 0px 10px;
+  
+  white-space: nowrap;
+  
+  -webkit-transition: all 0.25s linear;
+  -moz-transition: all 0.25s linear;
+  -o-transition: all 0.25s linear;
+}
+
+ul li a:hover {
+  color: #999;
+  text-shadow: rgba(255,255,255,1) 0px 0px 20px;
+}
+
+
+
+#selector {
+  position: absolute;
+  top: 180px;
+  right: 60%;
+  width: 300px;
+  height: 300px;
+}
+
+#selector .outer {
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+
+  position: absolute;
+  top: 35px;
+  width: 40px;
+  right: 20px;
+  height: 120px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -o-border-radius: 2px;
+  
+  background: transparent;
+
+  /*
+  -webkit-box-shadow: rgba(0,0,0,0.5) 0px 0px 2px;
+  -moz-box-shadow: rgba(0,0,0,0.5) 0px 0px 2px;
+  -o-box-shadow: rgba(0,0,0,0.5) 0px 0px 2px;
+  */
+  
+  opacity: 0;
+
+}
+
+#selector .outer .inner {
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url(http://reederapp.com/ipad/images/background.png);
+
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -o-border-radius: 2px;
+
+
+}
+
+#selector .outer .btn-bottom {
+  
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  
+  background: #bbb;
+  position: relative;
+  top: 100%;
+  width: 0;
+  height: 0;
+  margin: 0 auto;
+  margin-top: -8px;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -o-border-radius: 0;
+  
+  border-left: 0 solid #eeedeb;
+  border-right: 0 solid #eeedeb;
+  border-bottom: 0 solid transparent;
+  
+  -webkit-box-shadow: #999 0px 2px 0px;
+  -moz-box-shadow: #999 0px 2px 0px;
+  -o-box-shadow: #999 0px 2px 0px;
+  
+  
+}
+
+#selector .outer .btn-top {
+  
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  
+  position: absolute;
+  background: #bbb;
+  left: 0;
+  right: 0;
+  top: 2px;
+  height: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -o-border-radius: 0;
+}
+
+
+#selector.iphone .outer, #selector.ipad .outer, #selector.mac .outer {
+  background: #999;
+  opacity: 1;
+
+}
+
+
+/**
+ * iPhone
+ */
+
+
+#selector.iphone .outer {
+  top: 10px;
+  
+  width: 36px;
+  height: 68px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+#selector.iphone .inner {
+  top: 10px;
+  left: 2px;
+  right: 2px;
+  bottom: 10px;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -o-border-radius: 0;
+
+}
+
+#selector.iphone .btn-top {
+  background: #aaa;
+  top: 5px;
+  width: 10px;
+  margin-left: 13px;
+  height: 1px;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -o-border-radius: 0;
+}
+
+#selector.iphone .btn-bottom {
+  top: 100%;
+  width: 6px;
+  height: 6px;
+  margin: 0 auto;
+  margin-top: -8px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -o-border-radius: 3px;
+}
+
+/**
+ * iPad
+ */
+
+
+
+#selector.ipad .outer {
+  top: 45px;
+  width: 76px;
+  height: 102px;
+  -webkit-border-radius: 5px;   
+  -moz-border-radius: 5px;    
+  -o-border-radius: 5px;    
+}
+
+#selector.ipad .outer .inner {
+  top: 9px;
+  left: 9px;
+  right: 9px;
+  bottom: 9px;
+
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -o-border-radius: 0;
+
+
+}
+
+#selector.ipad .btn-bottom {
+  top: 100%;
+  width: 5px;
+  height: 5px;
+  margin: 0 auto;
+  margin-top: -7px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -o-border-radius: 2px;
+}
+
+
+/**
+ * Mac
+ */
+
+
+#selector.mac .outer {
+  top: 100px;
+  width: 138px;
+  height: 107px;    
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+
+#selector.mac .outer .inner {
+  top: 5px;
+  left: 5px;    
+  right: 5px;
+  bottom: 25px;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -o-border-radius: 0;
+}
+
+#selector.mac .btn-bottom {
+  top: 100%;
+  width: 30px;
+  height: 5px;
+  margin: 0 auto;
+  margin-top: 1px;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -o-border-radius: 0;
+  
+  border-left: 8px solid #eeedeb;
+  border-right: 8px solid #eeedeb;
+  border-bottom: 5px solid transparent;
+  
+  -webkit-box-shadow: #999 0px 2px 0px;
+  -moz-box-shadow: #999 0px 2px 0px;
+  -o-box-shadow: #999 0px 2px 0px;
+  
+}
+
+/*
+a.mac {
+  cursor: default;
+}
+a.mac span {
+  display: none;
+}
+a.mac:hover span {
+  position: relative;
+  top: -1em;
+  font-style: italic;
+  font-size: 0.75em;
+  line-height: 1;
+  display: block;
+}
+*/
+
+.gloria {
+  bottom: 5px;
+  display: block;
+  position: absolute;
+  right: -134px;
+}
+
+.gloria img {
+  display: block;
+}
